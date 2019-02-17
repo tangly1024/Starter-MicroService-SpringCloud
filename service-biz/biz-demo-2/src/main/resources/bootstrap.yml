@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: biz-demo-2
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: dev

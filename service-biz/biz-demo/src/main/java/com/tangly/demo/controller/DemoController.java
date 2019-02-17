@@ -2,8 +2,9 @@ package com.tangly.demo.controller;
 
 import com.tangly.demo.ao.DemoAO;
 import com.tangly.demo.bo.DemoBO;
-import com.tangly.demo.client.Demo2ServiceClient;
+import com.tangly.demo.client.Demo2Client;
 import com.tangly.demo.service.IDemoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,19 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RefreshScope
+@Slf4j
 public class DemoController {
 
     private final IDemoService demoService;
 
     private final DiscoveryClient discoveryClient;
 
-    private final Demo2ServiceClient demo2ServiceClient;
+    private final Demo2Client demo2Client;
 
     @Autowired
-    public DemoController(IDemoService demoService, DiscoveryClient discoveryClient, Demo2ServiceClient demo2ServiceClient) {
+    public DemoController(IDemoService demoService, DiscoveryClient discoveryClient, Demo2Client demo2Client) {
         this.demoService = demoService;
         this.discoveryClient = discoveryClient;
-        this.demo2ServiceClient = demo2ServiceClient;
+        this.demo2Client = demo2Client;
     }
 
     @GetMapping(value = "demo")
@@ -41,10 +43,10 @@ public class DemoController {
     }
 
     @GetMapping(value = "plus")
-    public DemoAO plus(Integer a,Integer b){
-        Integer result = demo2ServiceClient.plus(a,b);
+    public DemoAO plus(Integer a, Integer b) {
+        Integer result = demo2Client.plus(a, b);
         return DemoAO.builder()
-                .query(a + " + " +b)
+                .query(a + " + " + b)
                 .result(String.valueOf(result))
                 .service(discoveryClient.getServices())
                 .build();
@@ -54,7 +56,8 @@ public class DemoController {
     private String testConfig;
 
     @GetMapping(value = "config")
-    public DemoAO config(){
+    public DemoAO config() {
+        log.info("调用了Demo1服务");
         return DemoAO.builder()
                 .query("")
                 .result(testConfig)

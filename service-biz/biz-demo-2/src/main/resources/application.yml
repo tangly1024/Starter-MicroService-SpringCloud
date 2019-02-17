@@ -1,9 +1,14 @@
-spring:
-  application:
-    name: biz-demo-2
 server:
   port: 8081
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:1001/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+feign:
+  hystrix:
+    enabled: true
