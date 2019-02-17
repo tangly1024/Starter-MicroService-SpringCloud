@@ -36,10 +36,10 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>service-api</module>        <!--接口服务层-->
+        <module>service-api-open</module>   <!--对外开放服务-->
         <module>service-biz</module>        <!--组合业务服务层-->
-        <module>service-component</module>  <!--基础服务层-->
-        <module>service-view</module>       <!--视图页面-->
+        <module>service-common</module>     <!--底层基础服务层-->
+        <module>service-view</module>       <!--前端视图-->
     </modules>
 
 </project>

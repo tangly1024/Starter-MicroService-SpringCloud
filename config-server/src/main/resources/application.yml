@@ -10,7 +10,7 @@ spring:
     active: native
 
 server:
-  port: 8888
+  port: 1002
 
 eureka:
   client:
