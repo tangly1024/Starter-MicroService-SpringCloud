@@ -1,6 +1,6 @@
 package com.tangly.demo.client.hytrix;
 
-import com.tangly.demo.client.Demo2Client;
+import com.tangly.demo.client.BizDemo2Client;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class Demo2Hystrix implements Demo2Client {
+public class BizDemo2Hystrix implements BizDemo2Client {
 
     @Override
     public Integer plus(Integer a, Integer b) {

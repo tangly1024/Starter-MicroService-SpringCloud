@@ -1,12 +1,12 @@
 package com.tangly.demo2.client.hytrix;
 
-import com.tangly.demo2.client.DemoClient;
+import com.tangly.demo2.client.BizDemoClient;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DemoServiceHytrix implements DemoClient {
+public class BizDemoHystrix implements BizDemoClient {
     @Override
     public String config() {
-        return "没有配置";
+        return "无法获取远端配置";
     }
 }

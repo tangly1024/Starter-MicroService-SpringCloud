@@ -2,7 +2,7 @@ package com.tangly.demo.controller;
 
 import com.tangly.demo.ao.DemoAO;
 import com.tangly.demo.bo.DemoBO;
-import com.tangly.demo.client.Demo2Client;
+import com.tangly.demo.client.BizDemo2Client;
 import com.tangly.demo.service.IDemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -22,13 +22,13 @@ public class DemoController {
 
     private final DiscoveryClient discoveryClient;
 
-    private final Demo2Client demo2Client;
+    private final BizDemo2Client bizDemo2Client;
 
     @Autowired
-    public DemoController(IDemoService demoService, DiscoveryClient discoveryClient, Demo2Client demo2Client) {
+    public DemoController(IDemoService demoService, DiscoveryClient discoveryClient, BizDemo2Client bizDemo2Client) {
         this.demoService = demoService;
         this.discoveryClient = discoveryClient;
-        this.demo2Client = demo2Client;
+        this.bizDemo2Client = bizDemo2Client;
     }
 
     @GetMapping(value = "demo")
@@ -44,7 +44,7 @@ public class DemoController {
 
     @GetMapping(value = "plus")
     public DemoAO plus(Integer a, Integer b) {
-        Integer result = demo2Client.plus(a, b);
+        Integer result = bizDemo2Client.plus(a, b);
         return DemoAO.builder()
                 .query(a + " + " + b)
                 .result(String.valueOf(result))
