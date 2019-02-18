@@ -6,8 +6,16 @@ spring:
       server:
         native:
           search-locations: classpath:/shared
+    bus:
+      trace:
+        enabled: true
   profiles:
     active: native
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: 1002
@@ -16,3 +24,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1001/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

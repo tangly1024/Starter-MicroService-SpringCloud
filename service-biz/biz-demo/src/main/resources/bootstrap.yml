@@ -7,6 +7,9 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+    bus:
+      trace:
+        enabled: true
 eureka:
   client:
     service-url:
