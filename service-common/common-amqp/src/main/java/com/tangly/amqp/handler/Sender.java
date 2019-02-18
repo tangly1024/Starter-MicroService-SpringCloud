@@ -1,10 +1,10 @@
 package com.tangly.amqp.handler;
 
+import com.tangly.amqp.mq.MqObject;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 
 @Component
 public class Sender {
@@ -17,9 +17,8 @@ public class Sender {
     }
 
     public void send() {
-        String context = "hello " + new Date();
-        System.out.println("Sender : " + context);
-        this.rabbitTemplate.convertAndSend("hello", context);
+        MqObject mqObject = new MqObject(1L, "ha", "ha");
+        this.rabbitTemplate.convertAndSend("hello", mqObject);
     }
 
 }

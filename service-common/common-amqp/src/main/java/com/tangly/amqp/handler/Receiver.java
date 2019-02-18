@@ -1,5 +1,6 @@
 package com.tangly.amqp.handler;
 
+import com.tangly.amqp.mq.MqObject;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -9,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class Receiver {
 
     @RabbitHandler
-    public void process(String hello) {
-        System.out.println("Receiver : " + hello);
+    public void process(MqObject mqObject) {
+        System.out.println("Receiver : " + mqObject);
     }
 
 }
