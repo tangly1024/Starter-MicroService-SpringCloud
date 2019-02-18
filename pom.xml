@@ -36,6 +36,12 @@
 
     <packaging>pom</packaging>
     <modules>
+        <!--支撑服务-->
+        <module>config-server</module>
+        <module>eureka-server</module>
+        <module>hystrix-server</module>
+        <module>api-gateway</module>
+
         <module>service-api-open</module>   <!--对外开放服务-->
         <module>service-biz</module>        <!--组合业务服务层-->
         <module>service-common</module>     <!--底层基础服务层-->
