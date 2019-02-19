@@ -98,10 +98,21 @@
             <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
         </dependency>
 
+        <!--连接zipkin进行调用追踪-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+            <artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+        <!-- EXAMPLE FOR RABBIT BINDING -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+        </dependency>
+
 
     </dependencies>
 

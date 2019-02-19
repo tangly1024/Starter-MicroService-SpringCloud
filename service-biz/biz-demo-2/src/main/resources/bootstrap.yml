@@ -10,6 +10,12 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 eureka:
   client:
     service-url:
