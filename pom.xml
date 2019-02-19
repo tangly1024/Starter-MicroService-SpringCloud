@@ -46,14 +46,12 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>support</module>            <!--spring_cloud - 服务支撑-->
-        <module>monitor</module>            <!--spring_cloud - 监控服务-->
+        <module>tech-cloud-support</module>     <!--spring_cloud 微服务支撑-->
+        <module>tech-cloud-monitor</module>     <!--spring_cloud 微服务监控-->
 
-        <module>service-api-open</module>   <!--对外开放服务-->
-        <module>service-biz</module>        <!--组合业务服务层-->
-        <module>service-common</module>     <!--底层基础服务层-->
-        <module>service-ui-vue</module>     <!--前端视图-->
-
+        <module>tech-service-biz</module>       <!--组合业务服务层-->
+        <module>tech-service-common</module>    <!--底层基础服务层-->
+        <module>tech-plugins</module>           <!--服务依赖-->
     </modules>
 
 </project>
