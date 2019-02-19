@@ -1,15 +1,16 @@
 spring:
   application:
-    name: biz-demo2
+    name: zipkin-server
   cloud:
     config:
       profile: default
       discovery:
         enabled: true
         service-id: config-server
+
+server:
+  port: 1003
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:1001/eureka
-server:
-  port: 8082

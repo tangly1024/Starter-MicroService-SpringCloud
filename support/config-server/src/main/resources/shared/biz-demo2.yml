@@ -1,0 +1,24 @@
+info:
+  profile: default
+myconfig:
+  tangly: demo2-config-deault
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  sleuth:
+    sampler:
+      percentage: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+feign:
+  client:
+    config:
+      remote-service:           #服务名，填写default为所有服务
+        connectTimeout: 1000
+        readTimeout: 12000

@@ -1,0 +1,37 @@
+info:
+  profile: default
+myconfig:
+  tangly: default-value-bus-2
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  sleuth:
+    sampler:
+      percentage: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+zuul:
+  host:
+      connect-timeout-millis: 10000
+      socket-timeout-millis: 60000
+  routes:
+    baidu:
+      path: /baidu/**
+      url: https://www.baidu.com/
+    tencent:
+      path: /qq/**
+      url: https://www.qq.com/
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000

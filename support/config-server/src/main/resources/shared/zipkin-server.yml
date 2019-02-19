@@ -1,0 +1,12 @@
+info:
+  profile: default
+myconfig:
+  tangly: demo2-config-deault-zipkin
+# 通过消息中间件获取trace
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+

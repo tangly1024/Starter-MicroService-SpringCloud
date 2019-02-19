@@ -40,17 +40,5 @@ public class Demo2Controller {
         return bizDemoClient.config();
     }
 
-    @Value("${myconfig.tangly}")
-    private String testConfigCenter;
-
-    @GetMapping("center")
-    public String center(){
-        return testConfigCenter;
-    }
-
-    @GetMapping("zipkin")
-    public String zipkin(){
-        return "哟噢噢噢噢噢 " + new Date();
-    }
 
 }

@@ -46,17 +46,14 @@
 
     <packaging>pom</packaging>
     <modules>
-        <!--支撑服务-->
-        <module>config-server</module>
-        <module>eureka-server</module>
-        <module>hystrix-server</module>
-        <module>api-gateway</module>
-        <module>zipkin-server</module>
+        <module>support</module>            <!--spring_cloud - 服务支撑-->
+        <module>monitor</module>            <!--spring_cloud - 监控服务-->
 
         <module>service-api-open</module>   <!--对外开放服务-->
         <module>service-biz</module>        <!--组合业务服务层-->
         <module>service-common</module>     <!--底层基础服务层-->
         <module>service-ui-vue</module>     <!--前端视图-->
+
     </modules>
 
 </project>

@@ -66,8 +66,4 @@ public class DemoController {
                 .service(discoveryClient.getServices())
                 .build();
     }
-
-    @RequestMapping("/zipkin") public String callBackend() {
-        return new RestTemplate().getForObject("http://localhost:8082/zipkin", String.class);
-    }
 }
