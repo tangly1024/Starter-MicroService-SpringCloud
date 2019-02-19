@@ -3,7 +3,9 @@ package com.tangly.apigateway.controller;
 import com.tangly.apigateway.ao.RoutAO;
 import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.zuul.filters.Route;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
+@RefreshScope
 public class GatewayResourceController {
 
 
@@ -47,5 +50,13 @@ public class GatewayResourceController {
             routeVMs.add(routAO);
         });
         return routeVMs;
+    }
+
+    @Value("${myconfig.tangly}")
+    private String config;
+
+    @GetMapping("/config")
+    public String testConfig() {
+        return config;
     }
 }

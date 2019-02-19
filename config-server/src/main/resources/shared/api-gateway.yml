@@ -1,7 +1,7 @@
 info:
   profile: default
 myconfig:
-  tangly: default-value
+  tangly: default-value-bus-2
 management:
   endpoints:
     web:
@@ -10,3 +10,22 @@ management:
 feign:
   hystrix:
     enabled: true
+
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  routes:
+    baidu:
+      path: /baidu/**
+      url: https://www.baidu.com/
+    tencent:
+      path: /qq/**
+      url: https://www.qq.com/
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
