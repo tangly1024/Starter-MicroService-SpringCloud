@@ -1,7 +1,6 @@
 package com.tangly.apigateway.controller;
 
 import com.tangly.apigateway.ao.RoutAO;
-import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -38,7 +37,6 @@ public class GatewayResourceController {
      * @return the ResponseEntity with status 200 (OK) and with body the list of routes
      */
     @GetMapping("/")
-    @Timed
     public List<RoutAO> activeRoutes() {
         List<Route> routes = routeLocator.getRoutes();
         List<RoutAO> routeVMs = new ArrayList<>();

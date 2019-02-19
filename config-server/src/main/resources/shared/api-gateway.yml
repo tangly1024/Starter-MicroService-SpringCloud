@@ -7,14 +7,14 @@ management:
     web:
       exposure:
         include: '*'
-feign:
-  hystrix:
-    enabled: true
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 zuul:
-  host:
-    connect-timeout-millis: 10000
-    socket-timeout-millis: 60000
   routes:
     baidu:
       path: /baidu/**
@@ -22,10 +22,3 @@ zuul:
     tencent:
       path: /qq/**
       url: https://www.qq.com/
-
-spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest

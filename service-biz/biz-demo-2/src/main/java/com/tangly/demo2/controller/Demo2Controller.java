@@ -9,6 +9,8 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 @RestController
 @Api("Demo2服务测试")
 @Slf4j
@@ -44,6 +46,11 @@ public class Demo2Controller {
     @GetMapping("center")
     public String center(){
         return testConfigCenter;
+    }
+
+    @GetMapping("zipkin")
+    public String zipkin(){
+        return "哟噢噢噢噢噢 " + new Date();
     }
 
 }

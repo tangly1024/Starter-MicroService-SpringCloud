@@ -1,7 +1,7 @@
 info:
   profile: default
 myconfig:
-  tangly: default-value-bus
+  tangly: default-value-bus-1
 management:
   endpoints:
     web:

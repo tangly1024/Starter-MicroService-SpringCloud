@@ -6,9 +6,9 @@ spring:
       server:
         native:
           search-locations: classpath:/shared
-    bus:
-      trace:
-        enabled: true
+  sleuth:
+    sampler:
+      percentage: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
   profiles:
     active: native
   rabbitmq:
@@ -26,7 +26,5 @@ eureka:
       defaultZone: http://localhost:1001/eureka
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+  security:
+    enabled: false
