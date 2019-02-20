@@ -52,6 +52,8 @@
         <module>tech-service-biz</module>       <!--组合业务服务层-->
         <module>tech-service-common</module>    <!--底层基础服务层-->
         <module>tech-plugins</module>           <!--服务依赖-->
+
+        <module>docs</module>                   <!--文档-->
     </modules>
 
 </project>
