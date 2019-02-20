@@ -17,8 +17,8 @@
     <!--业务层-->
 
     <modules>
-        <module>biz-demo</module>
-        <module>biz-demo-2</module>
+        <module>service-biz-demo</module>
+        <module>service-biz-demo2</module>
     </modules>
 
 

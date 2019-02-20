@@ -8,8 +8,10 @@ spring:
         enabled: true
         service-id: config-server
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://localhost:1001/eureka
+      defaultZone: ${EUREKA_SERVER:http://192.168.2.139:1001/eureka}
 server:
   port: 8080

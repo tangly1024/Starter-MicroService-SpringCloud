@@ -4,8 +4,12 @@ spring:
 server:
   port: 1001
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://192.168.2.139:1001/eureka}
   server:
     enable-self-preservation: false
