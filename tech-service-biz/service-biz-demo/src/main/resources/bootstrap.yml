@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   application:
     name: biz-demo
@@ -7,11 +9,30 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+  rabbitmq:
+    host: ${RABBIT_HOST:192.168.2.139}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_USERNAME:guest}
+  sleuth:
+    sampler:
+      percentage: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
       defaultZone: ${EUREKA_SERVER:http://192.168.2.139:1001/eureka}
-server:
-  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      remote-service:           #服务名，填写default为所有服务
+        connectTimeout: 1000
+        readTimeout: 12000

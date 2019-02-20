@@ -7,6 +7,11 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+  rabbitmq:
+    host: ${RABBIT_HOST:192.168.2.139}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
 
 server:
   port: 1003

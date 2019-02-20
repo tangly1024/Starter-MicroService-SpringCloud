@@ -1,26 +1,2 @@
-info:
-  profile: default
 myconfig:
   tangly: default-value-bus-1
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-spring:
-  sleuth:
-    sampler:
-      percentage: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
-  rabbitmq:
-    host: ${RABBIT_HOST:192.168.2.139}
-    port: ${RABBIT_PORT:5672}
-    username: ${RABBIT_USERNAME:guest}
-    password: ${RABBIT_USERNAME:guest}
-feign:
-  hystrix:
-    enabled: true
-  client:
-    config:
-      remote-service:           #服务名，填写default为所有服务
-        connectTimeout: 1000
-        readTimeout: 12000
