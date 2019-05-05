@@ -3,12 +3,13 @@ myconfig:
 
 zuul:
   host:
-      connect-timeout-millis: 10000
-      socket-timeout-millis: 60000
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
   routes:
-    baidu:
+    # 测试外部链接
+    external-baidu:
       path: /baidu/**
       url: https://www.baidu.com/
-    tencent:
+    external-tencent:
       path: /qq/**
       url: https://www.qq.com/

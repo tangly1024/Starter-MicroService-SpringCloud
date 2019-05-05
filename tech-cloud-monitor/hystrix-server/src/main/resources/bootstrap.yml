@@ -12,11 +12,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVER:http://192.168.2.139:1001/eureka}
-myconfig:
-  tangly: demo2-config-deault
-turbine:
-  aggregator:
-    cluster-config: default     #需要监控的服务集群名
-  app-config: biz-demo,biz-demo2    #需要监控的服务名
-  cluster-name-expression: new String("default")
+      defaultZone: ${EUREKA_SERVER:http://localhost:1001/eureka}

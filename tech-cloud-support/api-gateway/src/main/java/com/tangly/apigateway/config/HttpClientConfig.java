@@ -1,9 +1,8 @@
-package com.tangly.apigateway;
+package com.tangly.apigateway.config;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +14,7 @@ import javax.net.ssl.SSLContext;
 import java.security.GeneralSecurityException;
 
 /**
- * 便于Zuul将请求转发至外网
+ * Zuul将请求转发至外网时用到
  */
 @Configuration
 public class HttpClientConfig {
@@ -28,7 +27,6 @@ public class HttpClientConfig {
     }
 
     @Bean
-    @ConfigurationProperties()
     @RefreshScope
     public HttpComponentsClientHttpRequestFactory getHttpRequestFactory() throws GeneralSecurityException {
         SSLContext sslContext = new SSLContextBuilder().build();

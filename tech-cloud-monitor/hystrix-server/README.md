@@ -1,4 +1,3 @@
-使用docker启动一个Zipkin
-```bash
-docker run -d -p 9411:9411 openzipkin/zipkin
-```
+# Hystrix 
+默认创建了一个turbine
+> http://localhost:1000/turbine.stream

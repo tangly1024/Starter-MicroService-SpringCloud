@@ -1,3 +1,6 @@
+server:
+  port: 1002
+
 spring:
   application:
     name: config-server
@@ -12,20 +15,17 @@ spring:
   profiles:
     active: native
   rabbitmq:
-    host: ${RABBIT_HOST:192.168.2.139}
+    host: ${RABBIT_HOST:localhost}
     port: ${RABBIT_PORT:5672}
     username: ${RABBIT_USERNAME:guest}
     password: ${RABBIT_PASSWORD:guest}
-
-server:
-  port: 1002
 
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVER:http://192.168.2.139:1001/eureka}
+      defaultZone: ${EUREKA_SERVER:http://localhost:1001/eureka}
 
 management:
   security:
