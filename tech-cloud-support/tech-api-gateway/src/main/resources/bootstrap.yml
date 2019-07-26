@@ -1,0 +1,45 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: tech-api-gateway
+  cloud:
+    config:
+      profile: default
+      discovery:
+        enabled: true
+        service-id: tech-config-server
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_USERNAME:guest}
+  sleuth:
+    sampler:
+      percentage: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+hystrix: #hystrix配置
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2500
+ribbon: #ribbon负载均衡参数配置
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+zuul:
+  ignoredServices: '*' #忽略所有未配置的service
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  # 本地配置的路由会和ConfigServer中的相叠加
+  routes:
+    user-service: #自定义名称
+      path: /demo/**
+      serviceId: tech-demo-server

@@ -20,7 +20,7 @@ public class DemoController {
     @Autowired
     private IDemoService demoService;
 
-    @Value("${myconfig.tangly:''}")
+    @Value("${config.version:''}")
     private String tangly;
 
     @Value("${server.port}")

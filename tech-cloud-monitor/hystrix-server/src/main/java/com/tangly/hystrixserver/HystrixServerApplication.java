@@ -14,7 +14,7 @@ public class HystrixServerApplication {
 
     @Autowired
     private void env(Environment env){
-        System.err.println(env.getProperty("myconfig.tangly"));
+        System.err.println(env.getProperty("config.version"));
     }
 
     public static void main(String[] args) {

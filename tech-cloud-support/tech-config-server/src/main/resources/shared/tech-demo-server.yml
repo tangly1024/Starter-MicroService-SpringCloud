@@ -1,3 +1,2 @@
-myconfig:
-  tangly: 123456789
-
+config:
+  version: 1.0

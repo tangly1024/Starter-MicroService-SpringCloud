@@ -17,12 +17,7 @@
     <!--业务层-->
 
     <modules>
-        <!--<module>service-biz-demo</module>-->
-        <!--<module>service-biz-demo-2</module>-->
-        <module>tech-biz-demo2</module>
-        <module>tech-biz-demo3</module>
     </modules>
-
 
     <build>
         <plugins>

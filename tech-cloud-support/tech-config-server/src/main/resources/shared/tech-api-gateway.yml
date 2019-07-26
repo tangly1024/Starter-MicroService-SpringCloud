@@ -1,0 +1,15 @@
+config:
+  version: 1.0
+
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  routes:
+    # 测试外部链接
+    external-baidu:
+      path: /baidu/**
+      url: https://www.baidu.com/
+    external-tencent:
+      path: /qq/**
+      url: https://www.qq.com/
