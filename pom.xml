@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.13.RELEASE</version>
+        <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -32,7 +32,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.SR1</version>
+                <version>Greenwich.SR2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -50,8 +50,9 @@
         <module>tech-cloud-monitor</module>     <!--spring_cloud 微服务监控-->
 
         <module>tech-service-biz</module>       <!--组合业务服务层-->
-        <module>tech-service-common</module>    <!--底层基础服务层-->
-        <module>tech-plugins</module>           <!--服务依赖-->
+        <module>tech-plugins</module>
+        <module>tech-dependencies</module>
+        <module>tech-demo</module>           <!--服务依赖-->
     </modules>
 
 </project>

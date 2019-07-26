@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: tech-biz-demo2
+server:
+  port: 8082
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

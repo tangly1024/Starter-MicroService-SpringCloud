@@ -1,6 +1,5 @@
 package com.tangly.demo.enums;
 
-import lombok.Data;
 
 /**
  * 结果枚举类

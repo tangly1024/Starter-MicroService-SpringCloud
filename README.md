@@ -25,3 +25,6 @@ mysql
 ## 部署方案
 - 所有组件服务采用Docker 
 - 容器调度平台 Rancher + Cattle
+
+## 参考文章
+[微服务架构从入门到精通](https://segmentfault.com/blog/spring-cloud)

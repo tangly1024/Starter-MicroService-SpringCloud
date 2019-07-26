@@ -36,7 +36,7 @@ public class Demo2Controller {
     }
 
     @GetMapping("config")
-    public String config(){
+    public String config() {
         return bizDemoClient.config();
     }
 
